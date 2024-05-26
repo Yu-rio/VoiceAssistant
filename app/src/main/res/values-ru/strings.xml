@@ -9,4 +9,6 @@
     <string name="second_fragment_label">Второй фрагмент</string>
     <string name="next">Следующий</string>
     <string name="previous">Предыдущий</string>
+    <string name="user_name">Вы</string>
+    <string name="assistant_name">Ким Су Хён</string>
 </resources>
