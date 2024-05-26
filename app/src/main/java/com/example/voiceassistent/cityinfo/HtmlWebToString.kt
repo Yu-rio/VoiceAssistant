@@ -11,29 +11,31 @@ import retrofit2.Response
 import java.util.function.Consumer
 
 class HtmlWebToString {
-    fun getHtmlWeb(city: String?, callback: Consumer<String>) {
+    fun getHtmlWeb(city: String?, callback: Consumer<MutableList<String>?>) {
         val api: HtmlWebApi? = HtmlWebService().getApi()
         val call: Call<HtmlWeb?>? = api?.getCityInfo(city)
         call!!.enqueue(object: Callback<HtmlWeb?> {
             override fun onResponse(call: Call<HtmlWeb?>, response: Response<HtmlWeb?>) {
                 val result = response!!.body()
                 if (result != null) {
-
-                    val city = result.city?.msg!!.get(0)
-
-                    val answer = "Город ${city.name},а именно ${city.fullName} " +
-                                "расположен на ширине: ${city.latitude.toString()} " +
-                                "и долготе: ${city.longitude.toString()}\n" +
-                                "Взято с сайта: ${city.url}"
+                    val answer: MutableList<String> = ArrayList()
+                    for(city in result.city?.msg!!) {
+                        answer.add(
+                            "Город ${city.name} точнее ${city.fullName} " +
+                                    "расположен на ширине: ${city.latitude.toString()} " +
+                                    "и долготе: ${city.longitude.toString()}\n" +
+                                    "Взято с сайта: ${city.url}"
+                        )
+                    }
                     callback.accept(answer)
                 } else {
-                    callback.accept("Не знаю такого города")
+                    callback.accept(null)
                 }
             }
 
             override fun onFailure(call: Call<HtmlWeb?>, t: Throwable) {
                 Log.w("CITY",t.toString())
-                callback.accept("Не могу узнать об этом городе")
+                callback.accept(null)
             }
         })
 
