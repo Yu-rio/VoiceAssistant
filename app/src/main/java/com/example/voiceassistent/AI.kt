@@ -1,5 +1,6 @@
 package com.example.voiceassistent
 
+import android.annotation.SuppressLint
 import android.icu.text.SimpleDateFormat
 import com.example.voiceassistent.cityinfo.HtmlWebToString
 import com.example.voiceassistent.weather.ForecastToString
@@ -39,9 +40,11 @@ class AI {
         "какой сегодня день недели" to getCurrentDayOfWeek(),
         "сколько дней до пз" to daysUntilDate(),
         "капец" to "А я что могу тут поделать...",
-        "ладно" to "Прохладно"
+        "ладно" to "Прохладно",
+        "ну а пока" to "Ну а пока. Если я спал с тобой не думай, что я твой, не говори со мной ни слова про любовь"
     )
 
+    @SuppressLint("CheckResult")
     fun getAnswer(question: String, callback: Consumer<String>){
         val formattedQuestion = question.trim().toLowerCase()
 

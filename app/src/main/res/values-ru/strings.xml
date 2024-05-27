@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Голосовой помощник</string>
-    <string name="action_settings">Настройки</string>
+    <string name="clear_dialog">Очистить</string>
     <string name="hint_question">Задайте вопрос</string>
     <string name="send_button">Отправить</string>
     <string name="default_answer">Думаю..</string>
@@ -11,4 +11,7 @@
     <string name="previous">Предыдущий</string>
     <string name="user_name">Вы</string>
     <string name="assistant_name">Ким Су Хён</string>
+    <string name="day_theme">День</string>
+    <string name="night_theme">Ночь</string>
+    <string name="themes">Темы</string>
 </resources>

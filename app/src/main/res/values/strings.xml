@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">VoiceAssistent</string>
-    <string name="action_settings">Settings</string>
+    <string name="clear_dialog">Clear</string>
     <string name="hint_question">Ask a question</string>
     <string name="send_button">Send</string>
     <string name="answer_prefix" translatable="false">&gt;&gt; </string>
@@ -50,4 +50,7 @@
     </string>
     <string name="user_name">You</string>
     <string name="assistant_name">Kim Soo Hyun</string>
+    <string name="day_theme">Day</string>
+    <string name="night_theme">Night</string>
+    <string name="themes">Themes</string>
 </resources>

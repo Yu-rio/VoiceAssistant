@@ -2,8 +2,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.voiceassistent.MainActivity" >
-    <item android:id="@+id/action_settings"
-        android:title="@string/action_settings"
+
+    <item android:id="@+id/clear_dialog"
+        android:title="@string/clear_dialog"
         android:orderInCategory="100"
         app:showAsAction="never" />
+
+
+    <item android:id="@+id/themes"
+        android:title="@string/themes"
+        android:orderInCategory="100"
+        app:showAsAction="never">
+    <menu>
+        <item android:id="@+id/day_setting"
+            android:title="@string/day_theme"
+            android:orderInCategory="100"
+            app:showAsAction="never" />
+
+        <item android:id="@+id/night_setting"
+            android:title="@string/night_theme"
+            android:orderInCategory="100"
+            app:showAsAction="never" />
+    </menu>
+    </item>
+
 </menu>
